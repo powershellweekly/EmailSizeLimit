@@ -21,12 +21,6 @@ $WarnLargeFileSize = $MaxLargeFileSize * .95
 Write-Host "WarnLargeFileSize $WarnLargeFileSize MB"
 $Value01 = $MaxLargeFileSize
 $Value02 = $WarnLargeFileSize
-
-#If (Test-Path $RegPath) {
-#New-ItemProperty -Path $RegPath -Name $Name01 -Value $Value01 -PropertyType DWORD -Force 
-#New-ItemProperty -Path $RegPath -Name $Name02 -Value $Value02 -PropertyType DWORD -Force 
-#}
-
 $SID = (Get-ADUser -Identity $UserName).SID.Value 
 
 Invoke-Command -ComputerName $ComputerName -ScriptBlock {
